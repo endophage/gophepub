@@ -1,0 +1,3 @@
+package schemas
+
+const contentSample = ``

@@ -4,9 +4,9 @@ import "encoding/xml"
 
 type Container struct {
 	XMLName   xml.Name  `xml:"container"`
-	RootFiles RootFiles `xml:"rootfiles" json:"rootfiles"`
-	Links     []Link    `xml:"links>link" json:"links"`
-	XMLNS     string    `xml:"xmlns,attr"`
+	RootFiles RootFiles       `xml:"rootfiles" json:"rootfiles"`
+	Links     []ContainerLink `xml:"links>link" json:"links"`
+	XMLNS     string          `xml:"xmlns,attr"`
 	Version   string    `xml:"version,attr"`
 }
 
@@ -21,7 +21,7 @@ type RootFile struct {
 	MediaType *string  `xml:"media-type,attr"`
 }
 
-type Link struct {
+type ContainerLink struct {
 	XMLName   xml.Name `xml:"link"`
 	HREF      string   `xml:"href,attr"`
 	MediaType *string  `xml:"media-type,attr"`
